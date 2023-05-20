@@ -21,8 +21,17 @@ else
 	--indented-code-classes=numberLines \
 	--filter=pandoc-mustache
 
-# Print vuln 
-# Em construção...
-
+# Print vuln
+    echo 'Produto Testado,Ambiente,Data,Ano';vars=$(cat vars.yaml); \
+    subtitle=$(echo "$vars" |grep subtitle |cut -d ':' -f2); \
+    ambiente=$(echo "$vars" |grep ambiente |cut -d ':' -f2); \
+    data=$(echo "$vars" |grep date |cut -d ':' -f2 |cut -d '-' -f2,3 |tr '-' '/'); \
+    ano=$(echo "$data" |cut -d '/' -f2); \
+    echo "$subtitle,$ambiente,$data,$ano"
+    echo
+    echo 'Vulnerabilidade,CVSS,Impacto'
+    sed -n '/# Vulnerabilidades/,/\\end{tabular}/p' "$1" |\
+        grep '\\rowcolor'  |cut -d "}" -f2 | \
+        sed 's/&&&/,/g' |cut -d '\' -f1
 fi
 
