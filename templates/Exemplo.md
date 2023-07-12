@@ -1,18 +1,22 @@
 # Vulnerabilidades Identificadas
 
-\begin{tabular}{ccccccc}
-\toprule 
-\textbf{Titulo Vulnerabilidade} &&& \textbf{CVSS Score} &&& \textbf{Impacto p/ Negócio} \\
+\begin{table}
+\centering
+\begin{minipage}{\textwidth}{}
+\begin{tabularx}{\linewidth}{|cXcc|}
+\toprule
+\textbf{Red Team ID} & \textbf{Título da Vulnerabilidade} & \textbf{Criticidade} \\
 \midrule
-\rowcolor{black!20} RCE Lateral &&& 8.0 &&& ALTO  \\
-\rowcolor{white!20} Localhost Injection &&& 6.5 &&& MÉDIO  \\
-\rowcolor{black!20} Hacker Hackeia &&& 10.0 &&& CRÍTICO  \\
-\rowcolor{white!20} Client Side Cookie Forgery &&& 2.0 &&& BAIXO  \\
-\rowcolor{black!20} IP Location &&& 4.0 &&& MÉDIO \\
-\rowcolor{white!20} No byte Injection &&& 7.0 &&& ALTO \\
+\rowcolor{black!20} rt-339182 & RCE Lateral & ALTA  \\
+\rowcolor{white!20} rt-067178 & Localhost Injection & MÉDIA  \\
+\rowcolor{black!20} rt-141690 & Hacker Hackeia & CRÍTICA  \\
+\rowcolor{white!20} rt-897515 & Client Side Cookie Forgery & BAIXA  \\
+\rowcolor{black!20} rt-164239 & IP Location & MÉDIA \\
+\rowcolor{white!20} rt-924293 & No byte Injection & ALTA \\
 \bottomrule
-\end{tabular}
-
+\end{tabularx}
+\end{minipage}
+\end{table}
 
 \pagebreak[4]
 
@@ -42,7 +46,7 @@ Durante os testes foi identificado um css e foi possível atingir um RCE Lateral
 ### Recomendação
 O bloqueio do binário netcat evita o ataque de qualquer hacker.
 
-### Referências 
+### Referências
 1. [OWASP Brute Force](https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks)
 
 [comment0]: # (##------------------------------------------------------##)

@@ -21,12 +21,12 @@ mustache: ./vars.yaml
 ---
 
 # Sumário Executivo
-    
+
 ## Autor & Escopo
 
 **Autor**      | | | |**Escopo** | | | | | | | | **Ambiente**| | | | | |**Versão**
 ---------------|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|--|-----
-               | | | | | | | | | | | | | | | | | | 
+               | | | | | | | | | | | | | | | | | |
 {{tester}}     | | | |{{escopo}} | | | | | | | | {{ambiente}}| | | | | |{{versao}}
 
 
@@ -46,7 +46,7 @@ Todas as informações contidas aqui são confidenciais e não devem ser copiada
 ## Classificação de Risco
 
 O risco é um evento que pode ocorrer no futuro e causar certos impactos, enquanto uma vulnerabilidade é uma fraqueza associada a um ativo, que pode vir a ser explorada por potenciais ameaças. O Risco é definido pela multiplicação entre o impacto e a probabilidade que uma vulnerabilidade tem de ser explorada.
-    
+
 ![Impacto vs Probabilidade](static/images/Impacto-probabilidade.png){width=110%}
 
 \pagebreak[4]
@@ -60,11 +60,11 @@ Segue abaixo a tabela da classificação da pontuação do CVSS, assim como o li
 
 \begin{center}
 \begin{tabular}{cccc}
-\toprule 
+\toprule
 \textbf{Gravidade} &&& \textbf{Pontuação}  \\
 \midrule
 \rowcolor{gray!20} Nula &&& 0.0  \\
-\rowcolor{blue!40} Baixa &&& 0.1 - 3.9  \\
+\rowcolor{green!40} Baixa &&& 0.1 - 3.9  \\
 \rowcolor{yellow!50} Média &&& 4.0 - 6.9  \\
 \rowcolor{red!50} Alta &&& 7.0 - 8.9 \\
 \rowcolor{purple!60} Crítica &&& 9.0 - 10.0 \\
