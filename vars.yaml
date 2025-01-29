@@ -1,12 +1,12 @@
-tester: Parad0x
-versao: 1.0
-escopo: Produto XYZ
-ambiente: PROD
-subtitle: Pentest Black Box
-date: 06-06-2006 | 07-07-2007
+tester: Parad0x-0xff
+versao: 2.0
+escopo: Domínio XYZ
+ambiente: Produção
+subtitle: Pentest GreyBox
+date: 12-10-2024 | 12-11-2024
 
 title: Relatório de vulnerabilidades
 toc-title: Sumário
-header-left: 3vil C0rp
+header-left: Empresa XYZ
 footer-left: Confidencial
-author: parad0x_0xff@blackflag.sec
+author: security@security.com.br

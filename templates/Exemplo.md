@@ -5,32 +5,35 @@
 \begin{minipage}{\textwidth}{}
 \begin{tabularx}{\linewidth}{|cXcc|}
 \toprule
-\textbf{Red Team ID} & \textbf{Título da Vulnerabilidade} & \textbf{Criticidade} \\
+\textbf{Identificador} & \textbf{Título da Vulnerabilidade} & \textbf{Risco} \\
 \midrule
-\rowcolor{black!20} rt-339182 & RCE Lateral & ALTA  \\
-\rowcolor{white!20} rt-067178 & Localhost Injection & MÉDIA  \\
-\rowcolor{black!20} rt-141690 & Hacker Hackeia & CRÍTICA  \\
-\rowcolor{white!20} rt-897515 & Client Side Cookie Forgery & BAIXA  \\
-\rowcolor{black!20} rt-164239 & IP Location & MÉDIA \\
-\rowcolor{white!20} rt-924293 & No byte Injection & ALTA \\
+\rowcolor{purple!100} UID-01 & Stored XSS & CRÍTICO  \\
+\rowcolor{red!80} UID-02 & IDOR & ALTO  \\
+\rowcolor{yellow!80} UID-03 & SQL Injection & MÉDIO  \\
+\rowcolor{yellow!80} UID-04 & Login Bypass & MÉDIO \\
+\rowcolor{green!60} UID-05 & Exposed API Key & BAIXO \\
 \bottomrule
 \end{tabularx}
 \end{minipage}
 \end{table}
 
+
+>Todas as informações contidas aqui são confidenciais e não devem ser copiadas ou divulgadas antes do consentimento formal da empresa.
+
 \pagebreak[4]
 
-## **RCE Lateral**
+## **Stored XSS**
 
 ### Descrição
 
-- **Endpoint Afetado:** www.example.com/api/v2/cmd.css
+- **Endpoint Afetado:** www.example.com/api/v2/admin
 
-- **Descrição Endpoint:** API responsável pelo css da página.
+- **Descrição Endpoint:** API responsável pelo acesos adminstrativo do sistema.
 
 \
 
-Durante os testes foi identificado um css e foi possível atingir um RCE Lateral na aplicação.
+Durante os testes foi identificado uma possível injeção de javascript na página de admin do sistema **ABC**
+que permitiu o acesso a contas de clientes e funcionários.
 
 ### Evidências
 
@@ -38,96 +41,32 @@ Durante os testes foi identificado um css e foi possível atingir um RCE Lateral
 ![Shell](evidencias/3vil_Corp/rce-lateral.png){width=100%}
 
 
-### Impacto
-- **Impacto Técnico:** Foi possível executar comandos hackers de forma remota e lateral no ambiente.
+### Impacto no ambiente
 
-- **Impacto Negócio:** A empresa pode ter impacto financeiro.
-
-### Recomendação
-O bloqueio do binário netcat evita o ataque de qualquer hacker.
-
-### Referências
-1. [OWASP Brute Force](https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks)
-
-[comment0]: # (##------------------------------------------------------##)
+Além do acesso indevido a conta do cliente, foi possível extrair informações pessoais e alterar dados cadastrais.
 
 
-\pagebreak[4]
 
-## **Localhost Injection**
+### Recomendação/Mitigação
 
-- **Endpoint Afetado:** www.localhost.com/index.php
-
-- **Descrição Endpoint:** Blog de notícias Wordpress
-
-\
-
-### Descrição
-Durante os testes foi identificado que após acessar a página index foi possível ter acesso ao servidor.
-
-### Evidências
-
-![/etc/passwd](evidencias/3vil_Corp/localhost-injection.png){width=100%}
-
-
-### Impacto
-
-- **Exemplo Técnico:** Essa vulnerabilidade permite a execução de comandos no localhost.
-- **Exemplo negócio:** Isso afeta diretamente o cliente que ao clicar no link malicioso, permite que o fraudador consiga acesso total a conta do cliente.
-
-### Recomendação
-
-Se houver mais de uma opção, escrever aqui para que possam ser discutidas posteriormente
-pelo time responsável.
-
+- Aplicar uma regra de WAF para evitar esse tipo de ataque como forma de mitigação.
+- Utilizar DOM Purify ou outra biblioteca que realize a sanitização dos campos da aplicacão.
 
 ### Referências
 
-Duas formas de se escrever as referências..
+1. [\textcolor{blue}{DOM Purify}](https://www.npmjs.com/package/dompurify/v/2.1.1)
 
-1. [OWASP Brute Force](https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks)
-2. \textcolor{blue}{https://owasp.org/www-community/Improper\_Error\_Handling}
+[comment0]: # (##-----------------------------------------------------------------------------------------##)
 
-[comment1]: # (##---------------------------------------------------------##)
-
-
-\pagebreak[4]
-
-## **Hacker Hackeia**
-
-- **Endpoint Afetado:** A comunidade BR de Hacking.
-
-- **Descrição Endpoint:** Responsável por toda história do Hacking BR.
-
-\
-
-### Descrição
-Durante os testes foi identificado que meliantes estão se apropriando de bordões criados por outras pessoas.
-
-
-### Evidências
-
-![Shell](evidencias/3vil_Corp/hacker_hackeia.png){width=110%}
-
-### Impacto
-
-- **Descrição Técnica:** Essa vulnerabilidade pode ocasionar traumas e condições neurológicas afetadas.
-- **Descrição Negócio:** Isso afeta diretamente a imagem da empresa visto que vai ficar queimada na comunidade.
-
-### Recomendação
-
-Para que ta feio!
-
-### Referências
-
-[\textcolor{blue}{Manifesto Hacker}](http://phrack.org/issues/7/3.html)
-
-[comment2]: # (##----------------------------------------------------------##)
 
 \pagebreak[4]
 
 
 # Considerações
 
-Recomenda-se corrigir as vulnerabilidades identificadas durante o teste para garantir que um invasor não possa explorar esses sistemas no futuro.
+As vulnerabilidades identificadas representam um alto risco financeiro reputacional para a **{{header-left}}**.
+Uma vez que qualquer usuário logado no sistema **XPTO** é capaz de realizar um upload de um arquivo malicioso e obter acesso indevido ao sistema.
+
+Recomenda-se corrigir as todas as vulnerabilidades reportadas durante o teste para garantir que um agente mal-intencionado não seja capaz de explorar esses sistemas no futuro, se utilizando das mesmas. 
+
 Vale lembrar que esses sistemas requerem avaliações frequentes e uma vez corrigidos, devem ser retestados afim de garantir que a correção aplicada é eficaz.

@@ -880,7 +880,7 @@ $else$
 $if(titlepage)$
 \begin{titlepage}
 $if(titlepage-background)$
-\newgeometry{top=2cm, right=4cm, bottom=10cm, left=4cm}
+\newgeometry{top=2cm, right=2cm, bottom=16.5cm, left=2cm}
 $else$
 \newgeometry{left=6cm}
 $endif$
@@ -889,7 +889,7 @@ $if(titlepage-color)$
 \newpagecolor{titlepage-color}\afterpage{\restorepagecolor}
 $endif$
 $if(titlepage-background)$
-\tikz[remember picture,overlay] \node[inner sep=0pt, anchor=south] at (current page.south) {\includegraphics[width=20cm,height=20cm]{$titlepage-background$}};
+\tikz[remember picture,overlay] \node[inner sep=0pt, anchor=south] at (current page.south) {\includegraphics[width=30cm,height=22cm]{$titlepage-background$}};
 $endif$
 \newcommand{\colorRule}[3][black]{\textcolor[HTML]{#1}{\rule{#2}{#3}}}
 \begin{flushleft}
