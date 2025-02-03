@@ -19,13 +19,13 @@ A utilização do Markdown como linguagem nativa facilita a reutilização de an
 ```sh
 brew install pandoc pipx &&
 brew install --cask mactex-no-gui &&
-pipx install pandoc-mustache &&
+pipx install pandoc-mustache
 ```
 
 **Linux / WSL no Windows:**
 
 ```sh
-apt install wget pandoc texlive-latex-base texlive-fonts-extra pipx  -y &&
+apt install wget pandoc texlive-latex-base texlive-fonts-extra pipx -y &&
 pipx install pandoc-mustache &&
 pipx ensurepath &&
 cp ~/.local/bin/pandoc-mustache /usr/local/bin/
@@ -80,7 +80,7 @@ Os arquivos que você irá precisar alterar para personalizar são:
 
 ```sh
 docker-compose up --build &&
-docker-compose run --rm sunny template/Exemplo.md
+docker-compose run --rm sunny templates/Exemplo.md
 ```
 
 ## Créditos
