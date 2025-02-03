@@ -27,7 +27,7 @@ pipx install pandoc-mustache &&
 ```sh
 apt install wget pandoc texlive-latex-base texlive-fonts-extra pipx  -y &&
 pipx install pandoc-mustache &&
-pipx ensurepath
+pipx ensurepath &&
 cp ~/.local/bin/pandoc-mustache /usr/local/bin/
 ```
 
