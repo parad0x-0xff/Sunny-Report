@@ -37,7 +37,7 @@ cp ~/.local/bin/pandoc-mustache /usr/local/bin/
 
 ## Como funciona ?
 
-Você pode utilizar o arquivo Exemplo-Relatório.md que ficará na pasta templates como base para criar novos
+Você pode utilizar o arquivo Exemplo.md que ficará na pasta templates como base para criar novos
 relatórios.
 
 Crie um arquivo markdown dentro da pasta **src**, uma vez editado
@@ -77,6 +77,8 @@ Os arquivos que você irá precisar alterar para personalizar são:
 ## Docker
 
 >A ideia é migrar para uma imagem mais leve, mas por enquanto é ubuntu.
+>Não esqueça de permitir o compartilhamento do diretório que estiver executando
+>o container.
 
 ```sh
 docker-compose up --build &&
